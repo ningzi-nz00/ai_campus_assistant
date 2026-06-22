@@ -5,3 +5,5 @@ langchain-huggingface
 langchain-community
 sentence-transformers
 chroma
+torch
+torchvision
