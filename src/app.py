@@ -10,15 +10,15 @@ except Exception:
         pass
 
 # 自动创建向量库（相对路径，本地云端通用）
-if not os.path.exists(r"D:\应用开发技术\ai_course_project\vector_db"):
+if not os.path.exists("vector_db"):
     with st.spinner("正在初始化校园知识库，首次加载稍慢..."):
         build_vector_store()
 
 # 密钥读取（标准正确写法）
 if "DEEPSEEK_API_KEY" in st.secrets:
-    DEEPSEEK_API_KEY = st.secrets["sk-c3aeeba06d5048ed880bc58d88f1f217"]
+    DEEPSEEK_API_KEY = st.secrets["DEEPSEEK_API_KEY"]
 else:
-    DEEPSEEK_API_KEY = os.getenv("sk-c3aeeba06d5048ed880bc58d88f1f217")
+    DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 
 # ========== 页面全局美化配置 ==========
 st.set_page_config(
